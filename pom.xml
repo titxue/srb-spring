@@ -51,6 +51,7 @@
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <lombok.version>1.18.20</lombok.version>
+        <hutool.version>5.7.20</hutool.version>
     </properties>
 
 
@@ -120,7 +121,11 @@
                 <!--在引用时请在maven中央仓库搜索3.X最新版本号-->
                 <version>${knife4j.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
             <!--commons-lang3-->
             <dependency>
                 <groupId>org.apache.commons</groupId>
