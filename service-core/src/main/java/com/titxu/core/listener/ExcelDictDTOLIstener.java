@@ -34,14 +34,13 @@ public class ExcelDictDTOLIstener extends AnalysisEventListener<ExcelDictDTO> {
     @Override
     public void doAfterAllAnalysed(AnalysisContext context) {
         log.info("所有数据解析完成！");
-        log.info("还剩{}条数据", list.size());
         saveData();
     }
 
     protected void saveData() {
-        log.info("开始保存数据");
+        log.info("开始保存数据,有{}条数据", list.size());
         service.saveBatchDict(list);
-        log.info("保存数据完成");
+        log.info("保存数据完成,有{}条数据", list.size());
     }
 
 

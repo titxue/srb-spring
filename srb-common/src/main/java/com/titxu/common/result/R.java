@@ -17,8 +17,8 @@ import lombok.NoArgsConstructor;
 public class R<T> {
 
     private Integer code;
-    private String msg;
-    private T data;
+    private String message;
+    private T result;
 
 
     /**
@@ -29,7 +29,7 @@ public class R<T> {
     public static <T> R<T> ok() {
         R<T> result = new R<>();
         result.setCode(ResponseEnum.SUCCESS.getCode());
-        result.setMsg(ResponseEnum.SUCCESS.getMsg());
+        result.setMessage(ResponseEnum.SUCCESS.getMsg());
         return result;
     }
 
@@ -42,7 +42,7 @@ public class R<T> {
     public static <T> R<T> error() {
         R<T> result = new R<>();
         result.setCode(ResponseEnum.ERROR.getCode());
-        result.setMsg(ResponseEnum.ERROR.getMsg());
+        result.setMessage(ResponseEnum.ERROR.getMsg());
         return result;
     }
 
@@ -52,10 +52,10 @@ public class R<T> {
      * @param <T> 返回结果类型
      * @return R
      */
-    public static <T> R<T> setResult(ResponseEnum responseEnum) {
+    public static <T> R<T> setResponseEnum(ResponseEnum responseEnum) {
         R<T> result = new R<>();
         result.setCode(responseEnum.getCode());
-        result.setMsg(responseEnum.getMsg());
+        result.setMessage(responseEnum.getMsg());
         return result;
     }
 
@@ -68,11 +68,11 @@ public class R<T> {
         // Todo: 优化为this,不要每次都new. 但是不知道怎么使用泛型,所以暂时这样,
         //  强行使用this使用时候泛型推断为Object,idea会报黄色警告
         // this.setData(data);
-        R<V> result = new R<>();
-        result.setCode(this.getCode());
-        result.setMsg(this.getMsg());
-        result.setData(data);
-        return result;
+        R<V> res = new R<>();
+        res.setCode(this.getCode());
+        res.setMessage(this.getMessage());
+        res.setResult(data);
+        return res;
     }
 
     /**u
@@ -81,7 +81,7 @@ public class R<T> {
      * @return R
      */
     public R<T> msg(String msg) {
-        this.setMsg(msg);
+        this.setMessage(msg);
         return this;
     }
 

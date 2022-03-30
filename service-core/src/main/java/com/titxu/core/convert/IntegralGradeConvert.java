@@ -1,5 +1,6 @@
 package com.titxu.core.convert;
 
+import com.titxu.core.pojo.dto.IntegralGradeRequest;
 import com.titxu.core.pojo.dto.IntegralGradeDTO;
 import com.titxu.core.pojo.entity.IntegralGrade;
 import com.titxu.core.pojo.vo.IntegralGradeVO;
@@ -11,6 +12,8 @@ import java.util.List;
 public interface IntegralGradeConvert {
     IntegralGradeVO toVO(IntegralGradeDTO dto);
     IntegralGradeDTO toDTO(IntegralGrade entity);
+
+    IntegralGrade toEntity(IntegralGradeRequest request);
 
     List<IntegralGradeVO> toVOs(List<IntegralGradeDTO> dto);
     List<IntegralGradeDTO> toDTOs(List<IntegralGrade> entity);

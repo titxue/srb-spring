@@ -33,5 +33,6 @@ public class IntegralGradeVO implements Serializable {
     @ApiModelProperty(value = "借款额度")
     private BigDecimal borrowAmount;
 
-
+    @ApiModelProperty(value = "创建时间")
+    private LocalDateTime createTime;
 }

@@ -10,7 +10,7 @@ import lombok.ToString;
 public enum ResponseEnum {
 
     SUCCESS(0, "成功"),
-    ERROR(-1, "服务器内部错误"),
+    ERROR(1, "服务器内部错误"),
 
     //-1xx 服务器错误
     BAD_SQL_GRAMMAR_ERROR(-101, "sql语法错误"),

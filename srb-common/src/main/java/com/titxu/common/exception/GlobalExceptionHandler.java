@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = BadSqlGrammarException.class)
     public R<Object> handleException(BadSqlGrammarException e){
         log.error(e.getMessage(), e);
-        return R.setResult(ResponseEnum.BAD_SQL_GRAMMAR_ERROR);
+        return R.setResponseEnum(ResponseEnum.BAD_SQL_GRAMMAR_ERROR);
     }
 
 
