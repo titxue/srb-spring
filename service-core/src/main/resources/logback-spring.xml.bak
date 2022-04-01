@@ -74,7 +74,7 @@
 
     <!-- 开发环境和测试环境 -->
     <springProfile name="dev,test">
-        <logger name="com.titxu.core" level="INFO,ERROR">
+        <logger name="com.titxu.base" level="INFO,ERROR">
             <appender-ref ref="CONSOLE" />
             <!--<appender-ref ref="ROLLING_FILE" />-->
         </logger>
@@ -82,7 +82,7 @@
 
     <!-- 生产环境 -->
     <springProfile name="prod">
-        <logger name="com.titxu.core" level="ERROR">
+        <logger name="com.titxu.base" level="ERROR">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="FILE" />
         </logger>

@@ -1,7 +1,6 @@
 package com.titxu.core.service.impl;
 
 import com.alibaba.excel.EasyExcel;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.titxu.core.convert.DictConvert;
 import com.titxu.core.listener.ExcelDictDTOLIstener;
 import com.titxu.core.pojo.dto.DictDTO;
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

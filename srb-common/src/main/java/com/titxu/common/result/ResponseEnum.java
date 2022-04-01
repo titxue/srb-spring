@@ -17,6 +17,7 @@ public enum ResponseEnum {
     SERVLET_ERROR(-102, "servlet请求异常"), //-2xx 参数校验
     UPLOAD_ERROR(-103, "文件上传错误"),
     EXPORT_DATA_ERROR(104, "数据导出失败"),
+    REDIS_CACHE_ERROR(105, "redis缓存错误"),
 
 
     //-2xx 参数校验
@@ -46,6 +47,12 @@ public enum ResponseEnum {
     ALIYUN_RESPONSE_ERROR(-501, "阿里云短信服务响应失败"),
     ALIYUN_SMS_LIMIT_CONTROL_ERROR(-502, "短信发送过于频繁"),//业务限流
     ALIYUN_SMS_ERROR(-503, "短信发送失败"),//其他失败
+    APP_ID_EMPTY(-504,"app_id不能为空" ),
+    SECRET_ID_EMPTY(-505,"secret_id不能为空" ),
+    SECRET_KEY_EMPTY(-506,"secret_key不能为空" ),
+    TEMPLATE_ID_EMPTY(-507,"template_id不能为空" ),
+    SMS_NAME_EMPTY(-508,"sms_name不能为空" ),
+
 
     WEIXIN_CALLBACK_PARAM_ERROR(-601, "回调参数不正确"),
     WEIXIN_FETCH_ACCESSTOKEN_ERROR(-602, "获取access_token失败"),

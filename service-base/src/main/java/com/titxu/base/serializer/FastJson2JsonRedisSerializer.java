@@ -1,4 +1,4 @@
-package com.titxu.core.serializer;
+package com.titxu.base.serializer;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.ParserConfig;

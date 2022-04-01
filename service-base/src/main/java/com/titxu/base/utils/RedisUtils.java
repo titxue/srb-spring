@@ -1,4 +1,4 @@
-package com.titxu.core.utils;
+package com.titxu.base.utils;
 
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Component;

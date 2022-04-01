@@ -1,11 +1,13 @@
-package com.titxu.core.aop.cache;
+package com.titxu.base.aop.cache;
 
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.TimeInterval;
+import com.titxu.common.exception.BusinessException;
+import com.titxu.common.result.ResponseEnum;
 import com.titxu.common.utils.MD5;
-import com.titxu.core.aop.BaseAspectSupport;
-import com.titxu.core.utils.RedisUtils;
+import com.titxu.base.aop.BaseAspectSupport;
+import com.titxu.base.utils.RedisUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -39,7 +41,7 @@ public class RedisCache extends BaseAspectSupport {
     }
 
     // 定义切面
-    @Pointcut("@annotation(com.titxu.core.aop.cache.Cacheable)")
+    @Pointcut("@annotation(com.titxu.base.aop.cache.Cacheable)")
     public void cache() {
     }
 
@@ -70,6 +72,7 @@ public class RedisCache extends BaseAspectSupport {
             log.info("缓存查询：{}，耗时：{}", key, endTime);
         } catch (Throwable e) {
             log.error("缓存查询异常", e);
+            throw new BusinessException(ResponseEnum.REDIS_CACHE_ERROR);
         }
         return result;
     }

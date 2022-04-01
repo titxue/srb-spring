@@ -2,7 +2,6 @@ package com.titxu.core.mapper;
 
 import com.titxu.core.pojo.entity.Dict;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

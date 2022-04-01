@@ -1,4 +1,4 @@
-package com.titxu.core.aop.cache;
+package com.titxu.base.aop.cache;
 
 
 import java.lang.annotation.*;

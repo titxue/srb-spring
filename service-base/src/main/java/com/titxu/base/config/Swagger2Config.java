@@ -1,4 +1,4 @@
-package com.titxu.core.config;
+package com.titxu.base.config;
 
 
 import org.springframework.context.annotation.Bean;

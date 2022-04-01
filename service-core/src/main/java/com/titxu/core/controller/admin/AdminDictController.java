@@ -6,7 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.titxu.common.exception.BusinessException;
 import com.titxu.common.result.R;
 import com.titxu.common.result.ResponseEnum;
-import com.titxu.core.aop.cache.Cacheable;
+import com.titxu.base.aop.cache.Cacheable;
 import com.titxu.core.convert.DictConvert;
 import com.titxu.core.pojo.dto.ExcelDictDTO;
 import com.titxu.core.pojo.vo.DictVo;

@@ -2,11 +2,9 @@ package com.titxu.core.listener;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
-import com.titxu.core.convert.DictConvert;
 import com.titxu.core.pojo.dto.ExcelDictDTO;
 import com.titxu.core.service.DictService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;

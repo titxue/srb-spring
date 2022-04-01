@@ -1,6 +1,6 @@
-package com.titxu.core.config;
+package com.titxu.base.config;
 
-import com.titxu.core.serializer.FastJson2JsonRedisSerializer;
+import com.titxu.base.serializer.FastJson2JsonRedisSerializer;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.context.annotation.Bean;

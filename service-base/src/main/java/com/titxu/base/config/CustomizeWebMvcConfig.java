@@ -1,10 +1,10 @@
-package com.titxu.core.config;
+package com.titxu.base.config;
 
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.titxu.core.serializer.LocalDateTimeToTimestampSerializer;
+import com.titxu.base.serializer.LocalDateTimeToTimestampSerializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

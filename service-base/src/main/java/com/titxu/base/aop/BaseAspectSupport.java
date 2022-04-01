@@ -1,4 +1,4 @@
-package com.titxu.core.aop;
+package com.titxu.base.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;

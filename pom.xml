@@ -19,6 +19,7 @@
         <module>srb-common</module>
         <module>service-base</module>
         <module>service-core</module>
+        <module>service-sms</module>
     </modules>
     <name>srb</name>
     <description>srb</description>
@@ -52,6 +53,8 @@
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <lombok.version>1.18.20</lombok.version>
         <hutool.version>5.7.20</hutool.version>
+        <cloopen.sms.version>1.0.3</cloopen.sms.version>
+        <tencentcloud.version>3.1.270</tencentcloud.version>
     </properties>
 
 
@@ -159,6 +162,19 @@
                 <artifactId>xmlbeans</artifactId>
                 <version>${apache.xmlbeans.version}</version>
             </dependency>
+            <!--短信服务sdk-->
+            <dependency>
+                <groupId>com.cloopen</groupId>
+                <artifactId>java-sms-sdk</artifactId>
+                <version>${cloopen.sms.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.tencentcloudapi/tencentcloud-sdk-java -->
+            <dependency>
+                <groupId>com.tencentcloudapi</groupId>
+                <artifactId>tencentcloud-sdk-java</artifactId>
+                <version>${tencentcloud.version}</version>
+            </dependency>
+
 
             <!--json-->
             <dependency>
