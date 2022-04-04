@@ -21,7 +21,7 @@ public class TreeUtils {
     private DictConvert convert;
 
     /**
-     * lamda表达式版
+     * lambda表达式版
      */
     public List<DictDTO> getTreeEX(List<Dict> record){
         return record.stream().filter(entity -> TREE_ROOT.equals(entity.getParentId())).map(entity -> {

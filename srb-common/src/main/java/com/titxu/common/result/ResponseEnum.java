@@ -52,7 +52,9 @@ public enum ResponseEnum {
     SECRET_KEY_EMPTY(-506,"secret_key不能为空" ),
     TEMPLATE_ID_EMPTY(-507,"template_id不能为空" ),
     SMS_NAME_EMPTY(-508,"sms_name不能为空" ),
-
+    FILE_NOT_FOUND(-509,"文件不存在" ),
+    FETCH_UPLOAD_AUTH_ERROR( -510, "获取上传地址和凭证失败"),
+    FILE_DELETE_FAIL(-511,"文件删除失败" ),
 
     WEIXIN_CALLBACK_PARAM_ERROR(-601, "回调参数不正确"),
     WEIXIN_FETCH_ACCESSTOKEN_ERROR(-602, "获取access_token失败"),

@@ -117,7 +117,7 @@ public class TencentSmsServiceImpl implements SmsPlatformService {
             Assert.notNull(res, ResponseEnum.ALIYUN_RESPONSE_ERROR);
 
             // 输出json格式的字符串回包
-            System.out.println(SendSmsResponse.toJsonString(res));
+            // System.out.println(SendSmsResponse.toJsonString(res));
             SendStatus sendStatus = res.getSendStatusSet()[0];
             Assert.notEquals(sendStatus.getCode(), "LimitExceeded.PhoneNumberOneHourLimit", ResponseEnum.ALIYUN_SMS_LIMIT_CONTROL_ERROR);
             Assert.notEquals(sendStatus.getCode(), "LimitExceeded.PhoneNumberThirtySecondLimit", ResponseEnum.ALIYUN_SMS_LIMIT_CONTROL_ERROR);

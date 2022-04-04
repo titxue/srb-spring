@@ -50,7 +50,7 @@ public class AdminDictController {
 
     @ApiOperation("上传字典文件") //swagger注解
     @PostMapping("importExcel")
-    public R batchInsertDict(@ApiParam(value = "数据字典", required = true) @RequestPart("file") MultipartFile file) {
+    public R<Object> batchInsertDict(@ApiParam(value = "数据字典", required = true) @RequestPart("file") MultipartFile file) {
         try {
             InputStream stream = file.getInputStream();
             dictService.importDict(stream);
@@ -63,10 +63,9 @@ public class AdminDictController {
 
     @Cacheable(key = "dict:all")
     @GetMapping
-    public R<List<DictVo>> dictList(){
+    public R<List<DictVo>> dictList() {
         return R.ok().data(convert.toVo(dictService.getList()));
     }
-
 
 
     /**
@@ -81,9 +80,8 @@ public class AdminDictController {
         try {
             response.setContentType("application/vnd.ms-excel");
             response.setCharacterEncoding("utf-8");
-            // 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系
             // 生成5位随机数
-            String randomNumber ="r"+ (int) (Math.random() * 10000);
+            String randomNumber = "r" + (int) (Math.random() * 10000);
             String fileName = URLEncoder.encode(LocalDateTime.now().format(DateTimeFormatter.ISO_DATE) + randomNumber, "UTF-8");
             response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
             // 这里需要设置不关闭流
@@ -94,7 +92,7 @@ public class AdminDictController {
             response.reset();
             response.setContentType("application/json");
             response.setCharacterEncoding("utf-8");
-            Map<String, String> map = new HashMap<String, String>();
+            Map<String, String> map = new HashMap<>();
             map.put("status", "failure");
             map.put("message", "下载文件失败" + e.getMessage());
             response.getWriter().println(JSON.toJSONString(map));

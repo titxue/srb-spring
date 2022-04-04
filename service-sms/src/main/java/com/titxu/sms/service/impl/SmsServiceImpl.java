@@ -38,6 +38,7 @@ public class SmsServiceImpl implements SmsService {
 
         // 保存到redis
         redisUtils.setCacheObject(cacheKey,smsDTO.getCode(),60L, TimeUnit.SECONDS);
+        log.info("code:{}",smsDTO.getCode());
 
 
 
