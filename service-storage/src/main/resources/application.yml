@@ -1,0 +1,29 @@
+server:
+  port: 9092
+  host: localhost
+
+spring:
+
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  profiles:
+    active: dev
+  application:
+    name: service-storage
+
+
+# OSS相关配置信息
+aliyun:
+  oss:
+    region: ${REGION} # oss区域  没有oss前缀
+    secret_id: ${SECRET_ID} # 访问身份验证中用到用户标识
+    secret_key: ${SECRET_KEY} # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    role_arn: ${ROLE_ARN} # 角色ARN
+    role_name: ${ROLE_NAME} # 角色名称
+    bucket: ${BUCKET} # oss的存储空间
+    maxSize: 10 # 上传文件大小(M)
+    policy:
+      expire: 300 # 签名有效期(S)
+    dir:
+      prefix: blog/images/   # 上传文件夹路径前缀
