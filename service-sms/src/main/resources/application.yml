@@ -14,7 +14,7 @@ spring:
   #------------------redis缓存配置------------
   redis:
     # Redis数据库索引（默认为 0）
-    database: 1
+    database: 0
     # Redis服务器地址
     host: 127.0.0.1
     # Redis服务器连接端口
@@ -38,8 +38,8 @@ spring:
 
 sms:
   tencent:
-    app_id: 1400655082
-    secret_id: AKIDDDySfbGela9QQAerqZ2E9nAH8k59xUln # 访问身份验证中用到用户标识
-    secret_key: nJZYIkvpSothFVUCdoiLhndCTUEhtnQm # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
-    template_id: 1355041 # 短信模板id
-    sign_name: 我在你身边js公众号
+    app_id: ${APP_ID} #应用ID
+    secret_id: ${SECRET_ID} # 访问身份验证中用到用户标识
+    secret_key: ${SECRET_KEY} # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    template_id: ${TEMPLATE_ID} # 短信模板id
+    sign_name: ${SIGN_NAME}
