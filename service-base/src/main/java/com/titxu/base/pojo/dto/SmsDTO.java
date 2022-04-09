@@ -1,6 +1,8 @@
-package com.titxu.sms.pojo.dto;
+package com.titxu.base.pojo.dto;
 
-import com.titxu.sms.pojo.enums.Platform;
+
+
+import com.titxu.base.pojo.enums.Platform;
 import lombok.Data;
 
 @Data

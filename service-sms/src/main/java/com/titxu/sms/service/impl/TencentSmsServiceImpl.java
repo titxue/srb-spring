@@ -1,6 +1,6 @@
 package com.titxu.sms.service.impl;
 
-import com.google.gson.Gson;
+
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.common.profile.ClientProfile;
@@ -9,17 +9,15 @@ import com.tencentcloudapi.sms.v20210111.SmsClient;
 import com.tencentcloudapi.sms.v20210111.models.SendSmsRequest;
 import com.tencentcloudapi.sms.v20210111.models.SendSmsResponse;
 import com.tencentcloudapi.sms.v20210111.models.SendStatus;
+import com.titxu.base.pojo.dto.SmsDTO;
 import com.titxu.common.exception.Assert;
 import com.titxu.common.exception.BusinessException;
 import com.titxu.common.result.ResponseEnum;
-import com.titxu.sms.pojo.dto.SmsDTO;
 import com.titxu.sms.properties.SmsProperties;
 import com.titxu.sms.service.SmsPlatformService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
 
 
 @Slf4j

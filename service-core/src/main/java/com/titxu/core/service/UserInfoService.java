@@ -1,5 +1,6 @@
 package com.titxu.core.service;
 
+import com.titxu.core.pojo.dto.UserInfoDto;
 import com.titxu.core.pojo.entity.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserInfoService extends IService<UserInfo> {
 
+    Boolean checkMobile(String mobile);
+
+    UserInfoDto register(UserInfoDto toDto);
 }

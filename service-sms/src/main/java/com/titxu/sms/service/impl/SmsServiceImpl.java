@@ -1,12 +1,14 @@
 package com.titxu.sms.service.impl;
 
+
+
+import com.titxu.base.pojo.dto.SmsDTO;
+import com.titxu.base.pojo.enums.Platform;
 import com.titxu.base.utils.RedisUtils;
-import com.titxu.sms.pojo.dto.SmsDTO;
-import com.titxu.sms.pojo.enums.Platform;
+import com.titxu.base.utils.SmsCodeUtil;
 import com.titxu.sms.pojo.vo.SmsVO;
 import com.titxu.sms.service.SmsPlatformService;
 import com.titxu.sms.service.SmsService;
-import com.titxu.sms.utils.SmsCodeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +33,7 @@ public class SmsServiceImpl implements SmsService {
 
 
         // 调用短信平台发送短信
-        platformServices.get(smsDTO.getPlatform().name()).getSms(smsDTO);
+        // platformServices.get(smsDTO.getPlatform().name()).getSms(smsDTO);
 
         // 生成redis key
         String cacheKey = SmsCodeUtil.createSmsCacheKey("sms:code", smsDTO.getPhone(), smsDTO.getType());
@@ -39,6 +41,8 @@ public class SmsServiceImpl implements SmsService {
         // 保存到redis
         redisUtils.setCacheObject(cacheKey,smsDTO.getCode(),60L, TimeUnit.SECONDS);
         log.info("code:{}",smsDTO.getCode());
+
+
 
 
 

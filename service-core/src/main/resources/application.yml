@@ -14,7 +14,7 @@ spring:
     url: jdbc:mysql://localhost:3306/srb?serverTimezone=GMT%2B8&characterEncoding=utf-8
     username: root
     password: 159919
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
   #------------------redis缓存配置------------
   redis:
@@ -39,10 +39,28 @@ spring:
         max-active: 2000
         # 连接池中的最大等待时间（毫秒）连接池最大阻塞等待时间（使用负值表示没有限制）
         max-wait: 10000
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://192.168.245.111:8848
+        username: nacos
+        password: nanos
+        namespace: public
 
-
-
-
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+        writeTimeout: 10000
+        # 是否开启调试模式
+        debug: true
+  sentinel:
+    enabled: true
+logging:
+  level:
+    com.titxu.core.client.SmsClient: DEBUG
 # mybatis plus配置
 mybatis-plus:
   # classpath* 为了解决多模块的情况下，mybatis-plus的配置文件路径问题
@@ -58,3 +76,18 @@ mybatis-plus:
 
 
 
+## swagger配置
+#swagger:
+#  # 是否开启swagger
+#  enabled: true
+#  # 标题
+#  title: '接口文档'
+#  # 描述
+#  description: '描述：微服务核心管理系统'
+#  # 版本
+#  version: '1.0.0'
+#  # 作者信息
+#  contact:
+#    name: Lion Li
+#    email: crazylionli@163.com
+#    url: https://gitee.com/JavaLionLi/RuoYi-Cloud-Plus

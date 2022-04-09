@@ -1,4 +1,4 @@
-package com.titxu.sms.pojo.enums;
+package com.titxu.base.pojo.enums;
 
 
 import lombok.AllArgsConstructor;

@@ -4,7 +4,7 @@
     <contextName>Srb</contextName>
 
     <!-- 日志的输出目录 -->
-    <property name="log.path" value="D:/code/srb/srb/srb_log/core" />
+    <property name="log.path" value="D:/code/srb/srb/srb_log/sms" />
 
     <!--控制台日志格式：彩色日志-->
     <!-- magenta:洋红 -->
@@ -74,7 +74,7 @@
 
     <!-- 开发环境和测试环境 -->
     <springProfile name="dev,test">
-        <logger name="com.titxu.base" level="INFO,ERROR,DEBUG">
+        <logger name="com.titxu.sms" level="DEBUG">
             <appender-ref ref="CONSOLE" />
             <!--<appender-ref ref="ROLLING_FILE" />-->
         </logger>
@@ -82,7 +82,7 @@
 
     <!-- 生产环境 -->
     <springProfile name="prod">
-        <logger name="com.titxu.base" level="ERROR">
+        <logger name="com.titxu.sms" level="ERROR">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="FILE" />
         </logger>

@@ -18,7 +18,7 @@ public class Swagger2Config {
     @Bean
     public Docket adminApiConfig(){
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("adminApi")
+                .groupName("管理模块")
                 .apiInfo(adminApiInfo())
                 .select()
                 .paths(PathSelectors.regex("/admin/.*"))
@@ -39,7 +39,7 @@ public class Swagger2Config {
     @Bean
     public Docket webApiConfig(){
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("webApi")
+                .groupName("前台模块")
                 .apiInfo(webApiInfo())
                 .select()
                 .paths(PathSelectors.regex("/api/.*"))

@@ -1,0 +1,53 @@
+server:
+  port: 80 # 服务端口
+
+spring:
+  http:
+    multipart:
+      enabled: true
+      maxFileSize: 10Mb
+      maxRequestSize: 10Mb
+  profiles:
+    active: dev # 环境设置
+  application:
+    name: service-gateway # 服务名
+  cloud:
+    inetutils:
+      hostname: localhost # 主机名
+    nacos:
+      discovery:
+        server-addr: http://192.168.245.111:8848 # nacos服务地址
+      config:
+        server-addr: http://192.168.245.111:8848 # nacos服务地址
+          #配置内容的数据格式
+        file-extension: yaml
+#        namespace: service-gateway
+        enabled: true
+    gateway:
+      discovery:
+        locator:
+#          enabled: true # gateway可以发现nacos中的微服务，并自动生成转发路由
+          lower-case-service-id: true # 小写的微服务名
+      routes:
+        - id: service-core
+          uri: lb://service-core
+          predicates:
+            - Path=/core/**
+          filters:
+#            - SwaggerHeaderFilter
+            - StripPrefix=1
+        - id: service-sms
+          uri: lb://service-sms
+          predicates:
+            - Path=/sms/**
+          filters:
+#            - SwaggerHeaderFilter
+            - StripPrefix=1
+        - id: service-oss
+          uri: lb://service-storage
+          predicates:
+            - Path=/storage/**
+          filters:
+#            - SwaggerHeaderFilter
+            - StripPrefix=1
+

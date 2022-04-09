@@ -1,8 +1,7 @@
 package com.titxu.sms;
 
 
-import com.titxu.sms.pojo.dto.SmsDTO;
-import com.titxu.sms.pojo.dto.SmsDTORequest;
+import com.titxu.base.pojo.dto.SmsDTO;
 import com.titxu.sms.properties.SmsProperties;
 import com.titxu.sms.service.SmsService;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +32,8 @@ public class SmsTest {
         // Assert.notEmpty(SmsProperties.SMS_NAME,ResponseEnum.SMS_NAME_EMPTY);
 
     }
-    @Test void testSmsService(){
+    @Test
+    void testSmsService(){
         SmsDTO dto = new SmsDTO();
         dto.setCode("1236");
         dto.setPhone("17339493439");

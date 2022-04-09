@@ -39,7 +39,7 @@ import java.util.Map;
  */
 @Api(tags = "数据字典管理")
 @RestController
-@RequestMapping("admin/dict")
+@RequestMapping("admin/core/dict")
 @Slf4j
 @CrossOrigin
 public class AdminDictController {

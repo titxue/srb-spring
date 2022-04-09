@@ -28,10 +28,12 @@ public enum ResponseEnum {
     CODE_NULL_ERROR(205, "验证码不能为空"),
     CODE_ERROR(206, "验证码错误"),
     MOBILE_EXIST_ERROR(207, "手机号已被注册"),
+    REGISTER_ERROR(207, "注册失败,请重新注册"),
     LOGIN_MOBILE_ERROR(208, "用户不存在"),
     LOGIN_PASSWORD_ERROR(209, "密码错误"),
     LOGIN_LOKED_ERROR(210, "用户被锁定"),
     LOGIN_AUTH_ERROR(-211, "未登录"),
+    PARAM_ERROR( -212, "参数不正确"),
 
 
     USER_BIND_IDCARD_EXIST_ERROR(-301, "身份证号码已绑定"),

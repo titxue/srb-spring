@@ -1,13 +1,12 @@
 package com.titxu.sms.controller;
 
 
-import com.titxu.common.result.R;
+import com.titxu.base.pojo.dto.SmsDTO;
+import com.titxu.base.pojo.dto.SmsDTORequest;
+import com.titxu.base.utils.SmsCodeUtil;
 import com.titxu.sms.convert.SmsConvert;
-import com.titxu.sms.pojo.dto.SmsDTO;
-import com.titxu.sms.pojo.dto.SmsDTORequest;
-import com.titxu.sms.pojo.enums.SmsLengthEnum;
+import com.titxu.base.pojo.enums.SmsLengthEnum;
 import com.titxu.sms.service.SmsService;
-import com.titxu.sms.utils.SmsCodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +21,12 @@ public class SmsController {
 
 
     @PostMapping("/send")
-    public R<Object> send(@RequestBody @Validated SmsDTORequest request){
+    public void send(@RequestBody @Validated SmsDTORequest request) {
         SmsDTO dto = convert.toDTO(request);
-        dto.setCode(SmsCodeUtil.createSmsRandomCode(SmsLengthEnum.SMS_LENGTH_4));
-        dto.setType("register");
+        if (dto.getCode() == null) {
+            dto.setCode(SmsCodeUtil.createSmsRandomCode(SmsLengthEnum.SMS_LENGTH_4));
+        }
         service.sendSms(dto);
-        return R.ok();
     }
 
     @Autowired

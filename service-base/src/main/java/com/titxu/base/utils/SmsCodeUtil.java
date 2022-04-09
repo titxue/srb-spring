@@ -1,8 +1,7 @@
-package com.titxu.sms.utils;
+package com.titxu.base.utils;
 
 import cn.hutool.core.util.RandomUtil;
-import com.titxu.sms.pojo.enums.SmsLengthEnum;
-import org.springframework.context.annotation.Configuration;
+import com.titxu.base.pojo.enums.SmsLengthEnum;
 
 /**
  * description: 腾讯云短信服务工具类

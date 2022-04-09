@@ -1,7 +1,6 @@
 package com.titxu.sms.service;
 
-import com.titxu.sms.pojo.dto.SmsDTO;
-import com.titxu.sms.pojo.dto.SmsDTORequest;
+import com.titxu.base.pojo.dto.SmsDTO;
 import com.titxu.sms.pojo.vo.SmsVO;
 
 public interface SmsService {
